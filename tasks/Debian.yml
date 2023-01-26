@@ -27,7 +27,7 @@
         path: /etc/apache2/sites-available/000-default.conf
         regexp: '^<VirtualHost *:80>'
         line: <VirtualHost *:81>
-      notify: Restart httpd
+      notify: Restart apache2.service
 
 #- name: Download dokuwiki and install/configure it
 #  block:
