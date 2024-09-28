@@ -13,6 +13,15 @@
     masked: no
     state: started
 
+- name: Copy Apache2 main config file with owner and permissions
+  ansible.builtin.copy:
+    src: files/etc/apache2/sites-available/000-default.conf
+    dest: /etc/apache2/sites-available/000-default.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify: Restart httpd
+
 #- name: Change apache2 listening port
 #  block:
 #    - name: Change apache2 ports.conf listening ports
